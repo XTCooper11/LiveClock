@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Time Zone Clocks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #282c36;
+            color: white;
+        }
+        .clock-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 50px;
+        }
+        .clock {
+            background: #3a3f4b;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+        h2 {
+            margin-bottom: 10px;
+        }
+        .time {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .names {
+            margin-top: 10px;
+            font-size: 14px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1>Live Time Zone Clocks</h1>
+    <div class="clock-container">
+        <div class="clock">
+            <h2>CST (Central Standard Time)</h2>
+            <div class="time" id="cst"></div>
+            <div class="names">XT Cooper</div>
+        </div>
+        <div class="clock">
+            <h2>EST (Eastern Standard Time)</h2>
+            <div class="time" id="est"></div>
+            <div class="names">ThinkTrout, Manny489, Kaito</div>
+        </div>
+        <div class="clock">
+            <h2>GMT +03:00</h2>
+            <div class="time" id="gmt"></div>
+            <div class="names">Fyoncle</div>
+        </div>
+    </div>  
+    <script>
+        function updateClocks() {
+            const now = new Date();
+            document.getElementById('cst').innerText = now.toLocaleString('en-US', { timeZone: 'America/Chicago', hour12: true, hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            document.getElementById('est').innerText = now.toLocaleString('en-US', { timeZone: 'America/New_York', hour12: true, hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            document.getElementById('gmt').innerText = now.toLocaleString('en-US', { timeZone: 'Europe/Moscow', hour12: true, hour: '2-digit', minute: '2-digit', second: '2-digit' });
+        }
+        
+        setInterval(updateClocks, 1000);
+        updateClocks();
+    </script>
+</body>
+</html>
