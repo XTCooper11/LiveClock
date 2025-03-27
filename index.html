@@ -48,12 +48,7 @@
         <div class="clock">
             <h2>EST (Eastern Standard Time)</h2>
             <div class="time" id="est"></div>
-            <div class="names">ThinkTrout, Manny489, Kaito, ItMeGavin</div>
-        </div>
-        <div class="clock">
-            <h2>GMT +03:00</h2>
-            <div class="time" id="gmt"></div>
-            <div class="names">Fyoncle</div>
+            <div class="names">ThinkTrout, Manny489, Kaito</div>
         </div>
     </div>  
     <script>
@@ -61,7 +56,6 @@
             const now = new Date();
             document.getElementById('cst').innerText = now.toLocaleString('en-US', { timeZone: 'America/Chicago', hour12: true, hour: '2-digit', minute: '2-digit', second: '2-digit' });
             document.getElementById('est').innerText = now.toLocaleString('en-US', { timeZone: 'America/New_York', hour12: true, hour: '2-digit', minute: '2-digit', second: '2-digit' });
-            document.getElementById('gmt').innerText = now.toLocaleString('en-US', { timeZone: 'Europe/Moscow', hour12: true, hour: '2-digit', minute: '2-digit', second: '2-digit' });
         }
         
         setInterval(updateClocks, 1000);
